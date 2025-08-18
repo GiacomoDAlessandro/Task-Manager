@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PriorityTaskManager {
 
@@ -14,7 +16,19 @@ public class PriorityTaskManager {
 
 
   public PriorityTaskManager(int size) {
-    this.size = size;
+    this.size = 0;
+    heapData = new Task[size];
+  }
+
+  //TODO: Check that this is correct
+  public void addAllTasks(Task[] tasks) {
+    for (int i = 0; i < tasks.length; i++) {
+      heapData[i] = tasks[i];
+      size++;
+      if (i > 0) {
+        percolateUp(i);
+      }
+    }
   }
 
   public void addTask(Task t) {
@@ -95,6 +109,8 @@ public class PriorityTaskManager {
       percolateDown(0);
     }
   }
+
+  public Task[] getHeapData() {return Arrays.copyOf(heapData, heapData.length);}
 
 
 

@@ -84,6 +84,9 @@ public class Task implements  Comparable<Task> {
       throw new IllegalArgumentException("Start time must be in HH:MM format");
     }
 
+    this.startTime = startTime;
+    this.endTime = endTime;
+
     int hour;
     int minute;
     try {
