@@ -1,9 +1,18 @@
+/**
+ * Tester Class
+ */
 public class TESTER {
 
+  /**
+   * Testing the addAll to make sure percolateUp works and that after this is called the array is
+   * in min-heap form
+   *
+   * @return true if works false otherwise
+   */
   public static boolean addAllTest() {
 
     //Checks that when tasks are in an array and not in min-heap order, when added using addAll()
-    // they get chagned to minheap order
+    // they get changed to minheap order
     {
       Task task1 = new Task("", 2025, 1, 01, "10:15", "12:15");
       Task task2 = new Task("", 2025, 3, 14, "10:15", "12:15");
@@ -34,9 +43,15 @@ public class TESTER {
       }
     }
 
+    //If reached, all tests passed
     return true;
   }
 
+  /**
+   * Tests the most recent accessor method and method that removes the most recent task
+   *
+   * @return true if works false otherwise
+   */
   public static boolean testMostRecent() {
 
     //Tests getting the most recent makes sure that it gets the correct one
@@ -85,12 +100,17 @@ public class TESTER {
       }
     }
 
+    //If reached, all tests passed
     return true;
   }
 
 
 
-
+  /**
+   * Main method to run test methods
+   *
+   * @param args not used
+   */
   public static void main(String[] args) {
     boolean worked = addAllTest() && testMostRecent();
 
