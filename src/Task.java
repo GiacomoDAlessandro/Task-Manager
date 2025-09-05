@@ -23,7 +23,7 @@ public class Task implements  Comparable<Task> {
   /**
    * Name of task to do
    */
-  private String task;
+  private String taskName;
 
   /**
    * Description of the task
@@ -59,15 +59,15 @@ public class Task implements  Comparable<Task> {
 
   /**
    *
-   * @param task
+   * @param taskName
    * @param year
    * @param month
    * @param dayNum
    * @param startTime
    * @param endTime
    */
-  public Task(String task, int year, int month, int dayNum, String startTime, String endTime) {
-    this.task = task;
+  public Task(String taskName, int year, int month, int dayNum, String startTime, String endTime) {
+    this.taskName = taskName;
     this.year = year;
     if (month < 1 || month > 12) {
       throw new IllegalArgumentException("Month provided is invalid");
@@ -140,6 +140,15 @@ public class Task implements  Comparable<Task> {
    */
   public boolean getCompletionStatus() {return this.complete;}
 
+  public String getStartTime() {return this.startTime;}
+
+  public String getEndTime() {return this.endTime;}
+
+  public String getTaskDescription() {return this.taskDescription;}
+
+  public LocalDateTime getDate() {return this.date;}
+
+  public String getTaskName() {return this.taskName;}
 
 
   @Override
